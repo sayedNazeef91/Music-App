@@ -1,0 +1,58 @@
+<div>
+    <div class="tabs-container">
+        <custom-tabs [selectedTab]="selectedTab" [tabConfig]="tabsConfig"></custom-tabs>
+    </div>
+    <div class="header-css">
+        <mat-form-field class="title-div">
+            <input matInput type="search" (change)="titleChanged()" autocomplete="off" [(ngModel)]="playListTitle"
+                class="search-input">
+        </mat-form-field>
+        <div class="action-icons">
+            <mat-icon class="action-icon" (click)="addSongs()" title="Add Songs" matSuffix>add_circle_outline</mat-icon>
+            <mat-icon *ngIf="!compareObject(playList, originalPlayList)" class="action-icon" (click)="savePlayList()"
+                title="Save Changes" matSuffix>save</mat-icon>
+            <mat-icon *ngIf="!compareObject(playList, originalPlayList)" (click)="cancelEdit()"
+                class="action-icon disabled" title="Cancel Changes" matSuffix>cancel</mat-icon>
+        </div>
+        <div class="search-box-container">
+            <app-search-box [searchPlaceHolder]="'Search by Songs, Album ....'"
+                (searchBoxChangeEmt)="onSearchChange($event)"></app-search-box>
+        </div>
+    </div>
+    <div class="content">
+        <h3 class="playlist-title">Songs</h3>
+        <div *ngIf="uISongs.length > 0" cdkDropList id="playlist-songs" [cdkDropListData]="uISongs" class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let song of uISongs" id="{{song.id}}" cdkDrag>
+                <div class="song-title">
+                    <div _ngcontent-xvi-c115="" class="song-img-wrap">
+                        <img class="song-img" src="{{song.thumbnailUrl}}">
+                    </div>
+                    <div class="song-content">
+                        <div class="song-name">{{song.title}}</div>
+                        <div class="detail-css">
+                            <div>
+                                <span class="col-h">Singer(s): </span>
+                                <span class="col-d">{{song.album.user.user}}</span>
+                            </div>
+                            <div>
+                                <span class="col-h">Album: </span>
+                                <span class="col-d">{{song.album.title}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="song-actions">
+                        <mat-icon class="playlist-action-icon" (click)="removeSongFromPlayList(song.id)"
+                            title="Delete Playlist" matsuffix="">delete</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="uISongs.length === 0 && !noSongsFound" fxLayout="row wrap" fxLayoutGap="16px grid">
+            <h3 style="color:#b0d7f1;">Loading...</h3>
+        </div>
+        <div *ngIf="noSongsFound" fxLayout="row wrap" fxLayoutGap="16px grid">
+            <h3 style="color:#bdc3c7;">No songs found.</h3>
+        </div>
+    </div>
+</div>

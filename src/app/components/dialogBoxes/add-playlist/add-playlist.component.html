@@ -1,0 +1,25 @@
+<mat-dialog-content>
+    <div>
+        <div class="cnfrm-div">
+            <div class="cnfrm-header">
+                <div class="cnfrm-close-icon">
+                    <mat-icon mat-dialog-close class="pull-right">close</mat-icon>
+                </div>
+                <div class="cnfrm-title">Create PlayList</div>
+            </div>
+            <div class="form">
+                <mat-form-field class="form-div">
+                    <input matInput type="search" autocomplete="off" [(ngModel)]="playlistTitle" placeholder="Title"
+                        class="search-input">
+                </mat-form-field>
+                <span class="error">{{errorMessage}}</span>
+            </div>
+            <div class="btn-sect">
+                <button mat-button class="primary-button" (click)="buttonClicked('save')" cdkFocusInitial
+                    [disabled]="(playlistTitle || '').trim().length === 0">Save</button>
+                <button mat-button class="default-button" [mat-dialog-close]="true"
+                    (click)="buttonClicked('cancel')">Cancel</button>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>

@@ -1,0 +1,50 @@
+<div>
+    <div class="tabs-container">
+        <custom-tabs [selectedTab]="selectedTab" [tabConfig]="tabsConfig"></custom-tabs>
+    </div>
+    <div class="header-css">
+        <h2 class="title-css">Playlists</h2>
+        <div class="action-icons">
+            <mat-icon class="action-icon" (click)="openPlayListPopup()" title="Create Playlist" matSuffix>
+                add_circle_outline</mat-icon>
+        </div>
+        <div class="search-box-container">
+            <app-search-box [searchPlaceHolder]="'Search by Songs, Album ....'"
+                (searchBoxChangeEmt)="onSearchChange($event)"></app-search-box>
+        </div>
+    </div>
+    <div class="content">
+        <div *ngIf="uIplayLists.length > 0" fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let playlist of uIplayLists">
+                <div class="song-wrapper c-half">
+                    <div class="song-content">
+                        <div class="title"
+                            matTooltip="{{(((playlist || {}).title || '').length > constants.PLAYLIST_TITLE_LENGTH) ? playlist.title : ''}}">
+                            {{(((playlist || {}).title || '').length > constants.PLAYLIST_TITLE_LENGTH) ? ((playlist.title | slice:0:(constants.PLAYLIST_TITLE_LENGTH - 1)) + '..') : playlist.title}}
+                        </div>
+                        <div class="date">
+                            <div>
+                                <span class="col-h">Created: </span>
+                                <span class="col-d"> {{getTime(playlist.createdDate)}}</span>
+                            </div>
+                            <div>
+                                <span class="col-h">Songs: </span>
+                                <span class="col-d"> {{((playlist || {}).songs || []).length}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist-action-icon-div">
+                        <mat-icon class="playlist-action-icon" (click)="editPlaylist(playlist.id)" title="Edit Playlist"
+                            matSuffix>
+                            mode_edit</mat-icon>
+                        <mat-icon class="playlist-action-icon" (click)="deletePlayListPopup(playlist.id)"
+                            title="Delete Playlist" matSuffix>delete</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="uIplayLists.length === 0" fxLayout="row wrap" fxLayoutGap="16px grid">
+            <h3 style="color:#bdc3c7;">No playlists found.</h3>
+        </div>
+    </div>
+</div>

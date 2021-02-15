@@ -1,0 +1,135 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '_constants.scss';
+body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.93) !important;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.ms-pnt {
+    cursor: pointer;
+}
+
+.fnt-16 {
+    font-size: 16px;
+}
+
+
+.mr-2 {
+    margin: 2px !important;
+}
+
+.pd-rght10 {
+    padding-right: 10px;
+}
+
+.dspl-nl-bl {
+    display: inline-block;
+}
+
+.mr-btm-5 {
+    margin-bottom: 2px !important;
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+    overflow: unset !important;
+}
+
+.mat-dialog-content {
+    margin: unset !important;
+    max-height: unset !important;
+    padding: 0px !important
+}
+
+.bld {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #0f61fd;
+    font-weight: 400;
+}
+
+.pad-5 {
+    padding: 5px;
+}
+
+.pad-r-5 {
+    padding-right: 5px !important;
+}
+
+.lable-font {
+    font-size: 14px !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.dx-tag-content{
+    border-radius: 10px !important;
+    min-width: 50px !important;
+    height: 25px !important;
+}
+
+.primary-button {
+    width: 137px;
+    height: 32px;
+    background: #0F61FD 0% 0% no-repeat padding-box;
+    opacity: 1 !important;
+    font: normal normal normal 12px/14px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-align: left !important;
+    margin: 0px 5px 0px 5px !important;
+    border-radius: unset !important;
+}
+
+.default-button {
+    width: 137px;
+    height: 32px;
+    background: #fff;
+    opacity: 1 !important;
+    font: normal normal normal 12px/14px Roboto;
+    letter-spacing: 0px;
+    color: #0F61FD;
+    text-align: left !important;
+    border-radius: unset !important;
+    border: 1px solid #0f61fd !important;
+    margin: 0px 5px 0px 5px !important;
+}
+
+.cdk-global-scrollblock{
+    overflow: hidden !important;
+    position: static;
+}
+
+.mat-form-field-flex {
+    background: #333 !important;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important;
+}
+
+.mat-input-element .mat-form-field-autofill-control .search-input {
+    margin-bottom:5px !important;
+}
+
+.mat-form-field-label > span {
+    color: #bdc3c7 !important;
+    font-size: 12px !important;
+    padding-left: 10px !important;
+}
+
+.mat-input-element{
+    color: #bdc3c7 !important;
+}

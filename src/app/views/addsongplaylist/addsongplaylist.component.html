@@ -1,0 +1,41 @@
+<div>
+    <div class="tabs-container">
+        <custom-tabs [selectedTab]="selectedTab" [tabConfig]="tabsConfig"></custom-tabs>
+    </div>
+    <div class="header-css">
+        <h2 class="title-css">Songs</h2>
+        <div class="action-icons">
+            <mat-icon *ngIf="selectedSongs.length > 0" class="action-icon" (click)="saveSongs()" title="Add to playlist" matSuffix>save</mat-icon>
+            <mat-icon *ngIf="selectedSongs.length > 0" (click)="cancelSelection()" class="action-icon" title="Cancel Selection" matSuffix>cancel</mat-icon>
+        </div>
+        <div class="search-box-container">
+            <app-search-box [searchPlaceHolder]="'Search by Songs, Album ....'" (searchBoxChangeEmt)="onSearchChange($event)"></app-search-box>
+        </div>
+    </div>
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let song of uISongs">
+            <div class="song-wrapper c-half {{ (selectedSongs.indexOf(song.id) >= 0) ? 'selected' : ''}}" (click)="selectSong(song.id)">
+                <div class="song-img-wrap">
+                    <img class="song-img" src="{{song.thumbnailUrl}}">
+                </div>
+                <div class="song-content">
+                    <div class="title" matTooltip="{{(((song || {}).title || '').length > constants.SONG_TITLE_LENGTH) ? song.title : ''}}">
+                        {{(((song || {}).title || '').length > constants.SONG_TITLE_LENGTH) ? ((song.title | slice:0:(constants.SONG_TITLE_LENGTH - 1)) + '..') : song.title}}
+                    </div>
+                    <div class="date">
+                        <div>
+                            <span class="col-h">Singer(s): </span>
+                            <span class="col-d"> {{(((song || {}).album || {}).user || {}).user}}</span>
+                        </div>
+                        <div>
+                            <span class="col-h">Album: </span>
+                            <span class="col-d"> {{((song || {}).album || {}).title}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

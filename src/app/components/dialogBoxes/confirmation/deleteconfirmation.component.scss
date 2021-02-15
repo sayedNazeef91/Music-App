@@ -1,0 +1,25 @@
+.cnfrm-div {
+    height: 80px;
+    padding: 20px 10px;
+    .cnfrm-header {
+        padding: 0px 0px 30px 10px;
+    }
+    .cnfrm-close-icon {
+        display: inline-block;
+        float: right;
+        cursor: pointer;
+    }
+    .cnfrm-title {
+        padding: 0px 0px 10px 0px;
+        display: inline-block;
+    }
+    .btn-sect {
+        padding: 0px 5px 10px;
+    }
+}
+
+mat-dialog-content {
+    overflow: hidden;
+    background: #1d1e22;
+    color: #bdc3c7;
+}

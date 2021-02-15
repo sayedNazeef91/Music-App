@@ -1,0 +1,44 @@
+<div *ngIf="((tabData || {}).tabs || []).length>0 && !!tabData.display">
+
+    <div class="tab-group" [ngClass]="tabData.tabWrapperClass">
+
+        <span *ngFor="let tab of ((tabData || {}).tabs || []); let i=index;">
+
+            <div class="tab" [class.active-tab]="(i==selectedIndex)"
+                [class.left-border]="(i !=0 && i != (selectedIndex+1) && i != (selectedIndex))"
+                (click)="tabChange(tab, i)" [ngClass]="tab.tabClass">
+                <span *ngIf="!(tab.showMenu)">
+                    <button mat-button>
+                        <span class="tab-label"> {{tab.text}}</span>
+                        <img class="tab-icon" [src]="tab.iconSrc" />
+                        <mat-icon class="tab-icon">{{tab.matIcon}}</mat-icon>
+                    </button>
+                </span>
+
+                <span *ngIf="!!(tab.showMenu)">
+                    <button mat-button [matMenuTriggerFor]="tabMenu" (click)="$event.stopPropagation()">
+                        <span class="tab-label">{{tab.text}}</span>
+                        <img class="tab-icon" [src]="tab.iconSrc" />
+                        <mat-icon class="tab-icon">{{tab.matIcon}}</mat-icon>
+                    </button>
+
+                    <mat-menu #tabMenu="matMenu" xPosition="before" class="tab-menu">
+                        <span [ngClass]="tab.menuWrapperClass">
+                            <button *ngFor="let menuItem of tab.menu" mat-menu-item (click)="tabChange(menuItem, i)"
+                            [class.active-tab-menu]="selectedTab === menuItem.value" [ngClass]="menuItem.tabClass">
+                                <span class="tab-label">{{menuItem.text}}</span>
+                                <mat-icon class="tab-icon" >{{menuItem.matIcon}}</mat-icon>
+                                <img class="tab-icon" [src]="menuItem.iconSrc" />
+                            </button>
+                        </span>
+                    </mat-menu>
+                </span>
+
+            </div>
+        </span>
+    </div>
+
+    <div *ngIf="tabData.useComponents" class="tab-body">
+        <ng-template #tabContent></ng-template>
+    </div>
+</div>

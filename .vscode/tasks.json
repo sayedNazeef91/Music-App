@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "type": "shell",
+  "command": "npm",
+  "tasks": [{
+      "label": "build",
+      "args": ["run","build-dev"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

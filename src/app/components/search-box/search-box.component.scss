@@ -1,0 +1,25 @@
+.search-bar {
+	display: contents;
+    width: 220px;
+    height: 48px;
+    margin-right: 17px;
+    position: relative;
+    top: 10px;
+}
+
+.search-bar-form {
+	width:100%;
+}
+
+.mat-form-field-flex {
+    background: #333 !important;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important;
+}
+
+.mat-input-element .mat-form-field-autofill-control .search-input {
+    margin-bottom:5px !important;
+}
+
+.mat-form-field-label > span {
+    color: #bdc3c7 !important;
+}

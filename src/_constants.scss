@@ -1,0 +1,37 @@
+$rtext: #252525;
+$rtextgrey:#616161;
+$rblue:#3e5788;
+$rbluedark:#354c79;
+$rsideblue:#252d3c;
+$rsidetext:#cdcdcd;
+$wpap-background:#f2f3f5;
+$link: #4588f3;
+$white:#fff;
+$lgrey:#f5f5f5;
+$tickercolor:#f1ad3a;
+$tickerbackground:#374a5e;
+$footer-background:#dddedf;
+$footer-color:#7b7b7b;
+$robo:"Roboto",
+sans-serif;
+$light:300;
+$medium:400;
+$bold:500;
+$heading-l-height:30px;
+$rbx-shadow:0px 2px 4px 0px rgba(0, 0, 0, 0.15) !important;
+$header-font:16px;
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    -moz-transform: $property;
+    -o-transform: $property;
+    transform: $property;
+}
+
+@mixin box-shadow($bx-shadow) {
+    -webkit-box-shadow: $bx-shadow;
+    -ms-box-shadow: $bx-shadow;
+    -moz-box-shadow: $bx-shadow;
+    -o-box-shadow: $bx-shadow;
+    box-shadow: $bx-shadow;
+}
