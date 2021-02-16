@@ -1,49 +1,4 @@
 @import '../../../_constants.scss';
-mat-toolbar {
-    justify-content: space-between;
-}
-
-.tabs-container {
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-.search-box-container {
-    width: 400px;
-    float: right;
-    display: block;
-}
-
-.header-css {
-    width: 98%;
-    display: block;
-    min-height: 50px;
-    margin: 10px 10px 0px 15px;
-}
-
-.title-css {
-    display: inline-block;
-    color: #bdc3c7;
-    margin-bottom: 0px;
-}
-
-.content {
-    padding: 16px;
-}
-
-.content > mat-card {
-    margin-bottom: 16px;
-}
-
-.col-h {
-    display: inline-block;
-    width: 50px;
-    font-weight: 400;
-    font-size: 12px;
-}
-.col-d {
-    font: normal normal 400 12px/12px $robo;
-}
 
 .song-wrapper {
     box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 14%);
