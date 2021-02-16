@@ -68,7 +68,7 @@ export class AddSongPlayListComponent implements OnInit {
         },
         {
             display: true,
-            text: 'Play Lists',
+            text: 'Playlists',
             link: '/musicapp/playlist',
             value: 'playlist',
             sequence: 2,
