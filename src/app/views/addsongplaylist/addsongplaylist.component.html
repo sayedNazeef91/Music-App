@@ -15,11 +15,11 @@
 <div class="content">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
         <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let song of uISongs">
-            <div class="song-wrapper c-half {{ (selectedSongs.indexOf(song.id) >= 0) ? 'selected' : ''}}" (click)="selectSong(song.id)">
-                <div class="song-img-wrap">
-                    <img class="song-img" src="{{song.thumbnailUrl}}">
+            <div class="playlist-wrapper c-half {{ (selectedSongs.indexOf(song.id) >= 0) ? 'selected' : ''}}" (click)="selectSong(song.id)">
+                <div class="playlist-img-wrap">
+                    <img class="playlist-img" src="{{song.thumbnailUrl}}">
                 </div>
-                <div class="song-content">
+                <div class="playlist-content">
                     <div class="title" matTooltip="{{(((song || {}).title || '').length > constants.SONG_TITLE_LENGTH) ? song.title : ''}}">
                         {{(((song || {}).title || '').length > constants.SONG_TITLE_LENGTH) ? ((song.title | slice:0:(constants.SONG_TITLE_LENGTH - 1)) + '..') : song.title}}
                     </div>
