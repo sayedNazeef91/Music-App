@@ -77,7 +77,7 @@ export class EditPlayListComponent implements OnInit {
         },
         {
             display: true,
-            text: 'Play Lists',
+            text: 'Playlists',
             link: '/musicapp/playlist',
             value: 'playlist',
             sequence: 2,
