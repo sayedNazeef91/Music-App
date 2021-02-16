@@ -16,8 +16,8 @@
     <div class="content">
         <div *ngIf="uIplayLists.length > 0" fxLayout="row wrap" fxLayoutGap="16px grid">
             <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let playlist of uIplayLists">
-                <div class="song-wrapper c-half">
-                    <div class="song-content">
+                <div class="playlist-wrapper c-half">
+                    <div class="playlist-content">
                         <div class="title"
                             matTooltip="{{(((playlist || {}).title || '').length > constants.PLAYLIST_TITLE_LENGTH) ? playlist.title : ''}}">
                             {{(((playlist || {}).title || '').length > constants.PLAYLIST_TITLE_LENGTH) ? ((playlist.title | slice:0:(constants.PLAYLIST_TITLE_LENGTH - 1)) + '..') : playlist.title}}
